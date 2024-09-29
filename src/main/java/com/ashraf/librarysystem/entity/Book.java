@@ -26,10 +26,19 @@ public class Book {
 
     }
 
-    public Book(String title,int year,String isbn){
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Book(String title, int year, String isbn){
         this.title = title;
         this.year = year;
         this.isbn = isbn;
+        this.id = 0;
     }
 
     //Constructors

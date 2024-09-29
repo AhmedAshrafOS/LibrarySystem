@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name="patron")
-public class patron {
+public class Patron {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,18 +21,26 @@ public class patron {
     @Column(name = "contactinfo")
     private String contactInfo;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Column(name = "borrowedbooks")
     private List<ArrayList> borrowedBooks;
 
     //Constructors
-    public patron(){
+    public Patron(){
 
     }
-    public patron(String name, String contactInfo){
+    public Patron(String name, String contactInfo){
             this.name = name;
             this.contactInfo = contactInfo;
             this.borrowedBooks = new ArrayList<>();
-
+            this.id = 0;
 
     }
     //Constructors
