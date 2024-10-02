@@ -29,8 +29,16 @@ public class Patron {
         this.id = id;
     }
 
-    @Column(name = "borrowedbooks")
-    private List<ArrayList> borrowedBooks;
+    @OneToMany(mappedBy = "patron")
+    private List<Records> borrowedBooks;
+
+    public List<Records> getBorrowedBooks() {
+        return borrowedBooks;
+    }
+
+    public void setBorrowedBooks(List<Records> borrowedBooks) {
+        this.borrowedBooks = borrowedBooks;
+    }
 
     //Constructors
     public Patron(){
@@ -62,13 +70,7 @@ public class Patron {
         this.contactInfo = contactInfo;
     }
 
-    public List<ArrayList> getBorrowedBooks() {
-        return borrowedBooks;
-    }
 
-    public void setBorrowedBooks(List<ArrayList> borrowedBooks) {
-        this.borrowedBooks = borrowedBooks;
-    }
     //Getter&Setters
 
 

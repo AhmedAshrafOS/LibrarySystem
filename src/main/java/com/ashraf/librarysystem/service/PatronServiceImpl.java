@@ -6,6 +6,7 @@ import com.ashraf.librarysystem.entity.Patron;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -29,11 +30,14 @@ public class PatronServiceImpl implements PatronService {
         return patronDAO.findByID(theID);
     }
 
+
+    @Transactional
     @Override
     public Patron save(Patron thePatron) {
         return patronDAO.save(thePatron);
     }
 
+    @Transactional
     @Override
     public void deleteByID(int theID) {
         patronDAO.deleteByID(theID);
